@@ -14,9 +14,10 @@ private:
 
 public:
 
-    Photo(){}
-    Photo(string name, string pathname):ObjetsMultimedia(name, pathname){}
-    ~Photo() {};
+    Photo(): ObjetsMultimedia("", ""), latitude(0.),longitude(0.){}
+    Photo(string name, string pathname, double latitude,double longitude):ObjetsMultimedia(name, pathname),latitude(latitude),longitude(longitude){}
+
+    ~Photo() {cout<<"Destroyed Photo" <<endl ;}
 
     double getLatitude() const;
     void setLatitude(double value);
@@ -24,8 +25,9 @@ public:
     double getLongitude() const;
     void setLongitude(double value);
 
-    void display()  const;
+    void display(ostream & stream)  const override;
 
+    void play() const override;
 };
 
 #endif // PHOTO_H

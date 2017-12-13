@@ -21,7 +21,14 @@ void Photo::setLongitude(double value)
     longitude = value;
 }
 
-void Photo::display() const
+void Photo::display(ostream & stream )const
+{
+    stream << "latitude = " << latitude << " longitude = " << longitude << endl;
+
+
+}
+
+void Photo::play() const
 {
     string path="open -a Preview " + pathname + " &";
     //string path = "open -a Preview Brazil.png &";
@@ -29,4 +36,5 @@ void Photo::display() const
     system(path.c_str());
 
 }
+
 

@@ -6,16 +6,21 @@
 class Video : public ObjetsMultimedia
 {
 private:
-
        double duration;
 
 public:
-    Video();
-    Video(string name, string pathname) : ObjetsMultimedia(name, pathname){}
+    Video(): duration(0.0){}
+    Video(string name, string pathname,double duration) :
+        ObjetsMultimedia(name, pathname),duration(duration){}
+
+    ~Video() {cout<<"Destroyed Video" <<endl ;}
 
     double getDuration() const;
     void setDuration(double value);
-    void display() const;
+
+    void display(ostream& stream ) const override;
+
+    void play()  const override;
 };
 
 #endif // VIDEO_H

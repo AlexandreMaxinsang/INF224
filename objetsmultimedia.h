@@ -1,8 +1,10 @@
 #ifndef OBJETSMULTIMEDIA_H
 #define OBJETSMULTIMEDIA_H
+
 #include <string>
 #include <iostream>
 #include <list>
+#include <memory>
 
 using namespace std;
 
@@ -13,15 +15,19 @@ protected:
     string name = "Picture of ....";
     string pathname;
 
+
 public:
 
     ObjetsMultimedia() {}
-    ObjetsMultimedia(string name, string pathname):name(name),pathname(pathname){}
+    ObjetsMultimedia(string name, string pathname):
+        name(name),pathname(pathname){}
 
     virtual ~ObjetsMultimedia() {}
 
 
-    virtual void display() const;
+    virtual void display(ostream& stream ) const;
+
+    virtual void play() const;
 
     virtual string getName() const;
     virtual void setName(const string &value);

@@ -1,11 +1,16 @@
 #include "objetsmultimedia.h"
 
 
- void ObjetsMultimedia :: display() const
+ void ObjetsMultimedia :: display( ostream& stream  ) const
 {
 
-    std::cout << "The name of the object " << name<< std::endl;
-    std::cout << "the path of the object " << pathname<< std::endl;
+    stream << "The name of the object " << name<< endl;
+    stream << "the path of the object " << pathname<< endl;
+
+}
+
+void ObjetsMultimedia :: play() const
+{
 
 }
 

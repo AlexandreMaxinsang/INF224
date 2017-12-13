@@ -11,7 +11,12 @@ void Video::setDuration(double value)
     duration = value;
 }
 
-void Video::display() const
+void Video::display(ostream& stream) const
+{
+ stream << "duration = " << duration << endl;
+
+}
+void Video::play() const
 {
     string path="open -a \"QuickTime Player\" "  + pathname + " &";
 
