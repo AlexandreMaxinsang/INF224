@@ -8,7 +8,7 @@
 #include "group.h"
 #include <memory>
 #include <map>
-
+#include <string>
 
 typedef std::map<string, shared_ptr<ObjetsMultimedia>> Dict_ob;
 typedef std::map<string, shared_ptr<Group>> Dict_gr;
@@ -20,6 +20,7 @@ private:
     Dict_gr dictgr;
 
 public:
+
     Manager(){}
 
     void createPhoto(string name, string pathname, double latitude,double longitude);
@@ -28,11 +29,15 @@ public:
 
     void createFilm(string name, string path,double duration, int n, int *durationchap);
 
-    void createGroupe(string name);
+    void createGroup(string name);
+
+    void removeObjM(string name);
 
     shared_ptr<Group> findGroupe(string key);
 
     void displayGroupe(string key);
+
+    void addToGroup(string namegroup,string nameobj);
 
     shared_ptr<ObjetsMultimedia> findObjM(string key);
 
