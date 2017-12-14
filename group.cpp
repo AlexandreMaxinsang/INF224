@@ -19,4 +19,18 @@ void Group::display(ostream& stream) const
 
 }
 
+void Group::removeName(string name)
+{
+    for( Group ::iterator it_group = this->begin(); it_group != this->end();)
+    {
+       string nameobject=(*it_group)->getName();
+
+      if((nameobject).compare(name)==0)
+         it_group= this->erase(it_group);
+      else
+           it_group++;
+    }
+
+}
+
 
